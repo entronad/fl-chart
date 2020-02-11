@@ -2,9 +2,7 @@ library的形态：
 
 为方便非ts项目使用，最终的library目前定位：纯js、es5、commonjs，同时代用d.ts类型文件
 
-~~分为两个完全独立的library： charts-common 和 charts-react，charts-common完全与react无关，共享同一个repo，repo下有docs, .gitignore, LISCENSE, README~~
 
-目前没有看出charts-common单独存在的意义，放到同一个项目中
 
 脚手架参考：https://github.com/a-tarasyuk/webpack-typescript-babel ，加上eslint，jest，mockito
 
@@ -36,22 +34,6 @@ eslint采用typescript-eslint, 相关依赖和eslintrc参考antd 4.0.0-alpha.7�
 1.和antd一样项目要用到的库添加到dependence而不是dev中
 
 2.lodash、gl-matrix等注意手动按需加载，注意gl-matrix正确的按需路径：gl-matrix/src/gl-matrix/vec2
-
-
-
-
-
-
-
-2019-10-14 google/charts 基线0.8.1
-
-
-
-顺序：
-
-charts_common -> common 的顺序
-
-common文件夹中以symbol_rederer为主线
 
 
 
@@ -120,10 +102,6 @@ function toJSON(
 
 
 相对路径同目录下加./
-
-
-
-CanvasBarStack中的_internal构造函数不单独剥离出来，注意其构造函数是工厂型的需进行改造 其传入字段中没有fullStackRect
 
 
 
@@ -311,3 +289,22 @@ duration部分dart自己也没有实现
 "moment": "^2.24.0",
 ```
 
+
+
+
+
+---
+
+fl 版本 0.8.1
+
+path_drawing 0.4.1
+
+
+
+FlBorderData 中的 border 在 flutter 中类型是 Border ，主要要借其属性进行绘制，因此也许建立相关的类
+
+不具有 lerp 功能
+
+
+
+注意ts和es6中对象式的命名参数加上 ={} 不用担心全不填时单个的参数没有默认值
