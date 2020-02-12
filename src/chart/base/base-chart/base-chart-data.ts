@@ -1,5 +1,7 @@
 import { Border, BorderStyle } from 'package:dart/ui';
 
+import { FlTouchInput } from './touch-input';
+
 // This class holds all data needed to [BaseChartPainter],
 // in this phase just the [FlBorderData] provided
 // to drawing chart border line,
@@ -59,4 +61,14 @@ export class FlTouchData {
     this.enabled = enabled;
     this.enableNormalTouch = enableNormalTouch;
   }
+}
+
+// this class holds the touch response details,
+// specific touch details should be hold on the concrete child classes
+export class BaseTouchResponse {
+  readonly touchInput: FlTouchInput;
+
+  constructor(touchInput: FlTouchInput) {
+    this.touchInput = touchInput;
+  };
 }

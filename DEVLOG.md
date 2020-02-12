@@ -308,3 +308,10 @@ FlBorderData 中的 border 在 flutter 中类型是 Border ，主要要借其属
 
 
 注意ts和es6中对象式的命名参数加上 ={} 不用担心全不填时单个的参数没有默认值
+
+
+
+dart:ui 中新建一个 Canvas 类，传入context，执行模拟dart 的绘图操作
+
+
+

@@ -1,3 +1,7 @@
+import { BaseChartData } from 'src';
+
+import { BaseChartPainter } from './base-chart-painter';
+
 // BaseChart is a base class for our charts,
 // each chart should extends this class and implement the [painter] method.
 // and the Painter should extends from [BaseChartPainter].
@@ -13,7 +17,7 @@ export abstract class BaseChart {
   }: {
     baseChartData?: BaseChartData,
     targetBaseChartData?: BaseChartData,
-  }): BaseChartPainter;
+  }): BaseChartPainter<BaseChartData>;
 
   // get the data of the concrete chart
   abstract getData(): BaseChartData;
