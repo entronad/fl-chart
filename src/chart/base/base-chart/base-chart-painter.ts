@@ -132,6 +132,6 @@ export abstract class TouchHandler<T extends BaseTouchResponse> {
     touchInput: FlTouchInput,
     size: Size,
   ): T => {
-    throw new Error(`not implemented ${touchInput} ${size}`);
+    throw new Error('not implemented');
   }
 }
